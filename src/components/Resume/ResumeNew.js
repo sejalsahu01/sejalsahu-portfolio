@@ -8,6 +8,8 @@ import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import { useTheme } from "../../context/ThemeContext";
+import { resumeLabels } from "../../data/roleContent";
+
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 function ResumeNew() {
@@ -15,7 +17,7 @@ function ResumeNew() {
   const { role } = useTheme();
 
   const pdf = role === "ds" ? pdfDs : pdfAiml;
-  const label = role === "ds" ? "Download Data Scientist CV" : "Download AI/ML CV";
+  const label = resumeLabels[role] || resumeLabels.aiml;
 
   useEffect(() => {
     setWidth(window.innerWidth);
@@ -38,7 +40,20 @@ function ResumeNew() {
         </Row>
 
         <Row className="resume">
-          <Document file={pdf} className="d-flex justify-content-center">
+          <Document
+            file={pdf}
+            className="d-flex justify-content-center"
+            loading={
+              <div style={{ textAlign: "center", padding: "2rem", color: "var(--accent)" }}>
+                Loading resume…
+              </div>
+            }
+            error={
+              <div style={{ textAlign: "center", padding: "2rem", color: "#ff6b6b" }}>
+                Failed to load resume. Please try again.
+              </div>
+            }
+          >
             <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
           </Document>
         </Row>

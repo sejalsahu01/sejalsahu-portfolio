@@ -1,0 +1,12 @@
+/* ===========================
+   Style Aggregator — Import Order Matters
+   =========================== */
+@import './variables.css';
+@import './base.css';
+@import './navbar.css';
+@import './home.css';
+@import './about.css';
+@import './projects.css';
+@import './resume.css';
+@import './footer.css';
+@import './animations.css';

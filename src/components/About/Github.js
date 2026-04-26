@@ -1,7 +1,12 @@
 import React from "react";
 import GitHubCalendar from "react-github-calendar";
 import { Row } from "react-bootstrap";
+import CONFIG from "../../config/constants";
 
+/**
+ * Github — renders GitHub contribution calendar.
+ * Username sourced from centralized config.
+ */
 function Github() {
   return (
     <Row
@@ -15,10 +20,10 @@ function Github() {
         Days I <strong className="purple">Code</strong>
       </h1>
       <GitHubCalendar
-        username="soumyajit4419"
+        username={CONFIG.githubUsername}
         blockSize={30}
         blockMargin={10}
-        color="#c084f5"
+        color="var(--accent, #00D4AA)"
         fontSize={20}
       />
     </Row>

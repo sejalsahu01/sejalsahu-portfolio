@@ -4,12 +4,11 @@ import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
-import {
-  AiFillGithub,
-  AiOutlineTwitter,
-} from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
+import SocialLinks from "../common/SocialLinks";
 
+/**
+ * Home — landing page with hero section, intro, and social links.
+ */
 function Home() {
   return (
     <section>
@@ -56,36 +55,7 @@ function Home() {
               Feel free to <span className="purple">connect </span>with me
             </p>
             <ul className="home-about-social-links">
-              <li className="social-icons">
-                <a
-                  href="https://github.com/sejalsahu01"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <AiFillGithub />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="mailto:sejal.sahu01@gmail.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <AiOutlineTwitter />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://linkedin.com/in/sejalsahu01"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <FaLinkedinIn />
-                </a>
-              </li>
+              <SocialLinks iconClassName="icon-colour home-social-icons" />
             </ul>
           </Col>
         </Row>

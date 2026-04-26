@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
@@ -12,21 +12,20 @@ import {
 } from "react-icons/ai";
 import { CgFileDocument } from "react-icons/cg";
 import { useTheme } from "../context/ThemeContext";
+import SOCIAL_LINKS from "../data/socialLinks";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
   const { role, toggleRole } = useTheme();
 
-  function scrollHandler() {
-    if (window.scrollY >= 20) {
-      updateNavbar(true);
-    } else {
-      updateNavbar(false);
+  useEffect(() => {
+    function scrollHandler() {
+      updateNavbar(window.scrollY >= 20);
     }
-  }
-
-  window.addEventListener("scroll", scrollHandler);
+    window.addEventListener("scroll", scrollHandler);
+    return () => window.removeEventListener("scroll", scrollHandler);
+  }, []);
 
   return (
     <Navbar
@@ -104,7 +103,7 @@ function NavBar() {
 
             <Nav.Item className="fork-btn">
               <a
-                href="https://github.com/sejalsahu01/sejal_portfolio"
+                href={SOCIAL_LINKS.repo}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="fork-btn-inner"

@@ -1,0 +1,102 @@
+/* ===========================
+   Base — Preloader, Scrollbar, Particles, Buttons
+   =========================== */
+
+button:focus {
+  box-shadow: none !important;
+}
+
+/* Preloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  background-color: var(--bg-dark, #0a192f);
+  background-image: url(../Assets/pre.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#preloader-none {
+  opacity: 0;
+}
+
+#no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-hover);
+  border-radius: 12px;
+}
+
+/* Particles */
+#tsparticles {
+  position: fixed !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  width: 100%;
+  height: 100%;
+}
+
+/* Buttons */
+.btn-primary {
+  color: #fff !important;
+  background-color: var(--btn-bg) !important;
+  border-color: var(--btn-bg) !important;
+}
+
+.btn-primary:hover {
+  color: #fff !important;
+  background-color: var(--btn-hover) !important;
+  border-color: var(--btn-hover) !important;
+}
+
+.btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Shared heading */
+.project-heading {
+  color: white !important;
+  font-size: 2.3em !important;
+  font-weight: 500 !important;
+  padding-top: 10px !important;
+}
+
+/* Card image */
+.card-img-top {
+  padding: 20px !important;
+  opacity: 0.8 !important;
+  border-radius: 10px !important;
+}
+
+/* Social icons (shared) */
+.social-icons {
+  display: inline-block !important;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.icon-colour {
+  color: var(--accent) !important;
+}

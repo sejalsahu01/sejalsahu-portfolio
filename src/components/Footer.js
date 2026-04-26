@@ -1,55 +1,25 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import {
-  AiFillGithub,
-  AiOutlineTwitter,
-} from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
+import SocialLinks from "./common/SocialLinks";
 
+/**
+ * Footer — site-wide footer with social links.
+ * Social icons rendered via shared SocialLinks component.
+ */
 function Footer() {
-  let date = new Date();
-  let year = date.getFullYear();
+  const year = new Date().getFullYear();
   return (
     <Container fluid className="footer">
       <Row>
-        <Col md="4" className="footer-copywright">
+        <Col md={4} className="footer-copywright">
           <h3>Sejal Sahu</h3>
         </Col>
-        <Col md="4" className="footer-copywright">
+        <Col md={4} className="footer-copywright">
           <h3>Copyright © {year} SS</h3>
         </Col>
-        <Col md="4" className="footer-body">
+        <Col md={4} className="footer-body">
           <ul className="footer-icons">
-            <li className="social-icons">
-              <a
-                href="https://github.com/sejalsahu01"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiFillGithub />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="mailto:sejal.sahu01@gmail.com"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiOutlineTwitter />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://linkedin.com/in/sejalsahu01"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <FaLinkedinIn />
-              </a>
-            </li>
+            <SocialLinks />
           </ul>
         </Col>
       </Row>
