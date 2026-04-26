@@ -7,5 +7,12 @@ body {
   font-family: "PT Mono", monospace !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to left, rgb(27 20 41), rgb(20 15 35));
+  background-color: var(--bg-dark, #0a192f);
+  background-image: 
+    linear-gradient(to right, var(--bg-nav, rgba(10,25,47,0.85)), var(--bg-card, rgba(10,25,47,0.95))),
+    url('./Assets/main-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
