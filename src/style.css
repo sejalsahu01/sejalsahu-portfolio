@@ -22,6 +22,7 @@ html,
     rgba(5, 12, 30, 0.9)
   );
   --imp-text-color: var(--accent);
+  --bg-image: url('./Assets/bg-aiml.jpg');
 }
 
 [data-role="ds"] {
@@ -47,6 +48,7 @@ html,
     rgba(15, 15, 35, 0.9)
   );
   --imp-text-color: var(--accent);
+  --bg-image: url('./Assets/bg-ds.jpg');
 }
 
 .purple {
